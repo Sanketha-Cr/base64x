@@ -34,7 +34,9 @@ func NoEscape(p unsafe.Pointer) unsafe.Pointer {
 }
 
 //go:nosplit
-func MoreStack(size uintptr)
+func MoreStack(size uintptr) {
+	// Stub implementation
+}
 
 //go:nosplit
 func Add(ptr unsafe.Pointer, off uintptr) unsafe.Pointer {
