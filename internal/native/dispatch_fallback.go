@@ -9,9 +9,9 @@ import (
 )
 
 //go:nosplit
-func B64Decode(out *[]byte, src unsafe.Pointer, len int, mod int) (ret int) {
+func B64Decode(out *[]byte, src unsafe.Pointer, length int, mod int) (ret int) {
 	// Fallback to standard library for non-amd64 architectures
-	srcBytes := (*[1 << 30]byte)(src)[:len:len]
+	srcBytes := (*[1 << 30]byte)(src)[:length:length]
 	decoded, err := base64.StdEncoding.DecodeString(string(srcBytes))
 	if err != nil {
 		return -1
